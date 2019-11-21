@@ -19,3 +19,15 @@
 `use <database_name>`
 
 `db.createUser({ user: <username>,pwd: <password>, roles: [{ role: 'readWrite', db:'<database_name>' }] })`
+
+5.  登陆docker
+   
+   `docker login`
+
+6.  commit容器到docker hub
+
+    `docker commit -a <username> -m <description> <container_name | container_id> <username>/<repository>:<tag>`
+
+7.  push容器到自己的仓库
+
+    `docker push <username>/<repository>:<tag>`
