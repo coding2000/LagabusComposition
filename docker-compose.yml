@@ -8,7 +8,7 @@ services:
     ports:
       - 37017:27017
     volumes:
-      - /data/db
+      - ${MONGODB_DIR}/data/db:/data/db
 
   redis:
     image: redis:latest
@@ -20,4 +20,15 @@ services:
       - "${REDIS_DIR}/data:/data"
     command:
       redis-server
+
+  mysql:
+    image: mysql:latest
+    container_name: lagabu_mysql
+    ports:
+      - 3307:3306
+    volumes:
+      - ${MYSQL_DIR}/data:/var/lib/mysql
+      - ${MYSQL_DIR}/conf.d:/etc/mysql/conf.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     

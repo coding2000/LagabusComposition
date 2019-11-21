@@ -1,5 +1,9 @@
 # LagabusComposition
 
+- 启动其中一个db
+    `docker-compose up -d <service_name>`
+
+
 ## mongodb配置用户
 
 1.  以admin启动mongo
